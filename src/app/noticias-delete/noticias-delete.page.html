@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Exluir Notícia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <img src="{{noticia.imagem}}" />
+    <ion-card-header>
+       <ion-card-title>{{noticia.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="danger" (click)="excluir()">Excluir</ion-button>
+
+    </ion-card-content>
+    <p *ngIf="msg !== null">{{msg}}</p>
+  </ion-card>
+
+
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>noticias-new</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="formGroup">
+  <ion-item>
+    <ion-label position="floating">Título</ion-label>
+    <ion-input type="text" formControlName="titulo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Conteúdo</ion-label>
+    <ion-textarea formControlName="conteudo"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Imagem (link)</ion-label>
+    <ion-textarea formControlName="imagem"></ion-textarea>
+
+  </ion-item>
+
+  <ion-button (click)="cadastrar()">Cadastrar</ion-button>
+  <p *ngIf="msg !== null">{{msg}}</p>
+</form>
+</ion-content>

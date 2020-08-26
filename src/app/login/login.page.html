@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup">
+  <ion-item>
+    <ion-label>Login</ion-label>
+    <ion-input type="text" formControlName="username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Senha</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="tryRegister()">Login</ion-button>
+  <p *ngIf="msg !== null">{{msg}}</p>
+</form>
+</ion-content>

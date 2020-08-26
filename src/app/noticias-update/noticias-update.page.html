@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Atualizar Notícia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup">
+    <ion-item>
+      <ion-label position="floating"> Título</ion-label>
+      <ion-input type="text" formControlName="titulo"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Conteúdo</ion-label>
+      <ion-textarea formControlName="conteudo"  rows="6"></ion-textarea>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Imagem (link)</ion-label>
+      <ion-textarea formControlName="imagem" rows="2"></ion-textarea>
+  
+    </ion-item>
+  
+    <ion-button expand="full" color="warning" (click)="atualizar()">Atualizar</ion-button>
+    <p *ngIf="msg !== null">{{msg}}</p>
+</form>
+</ion-content>

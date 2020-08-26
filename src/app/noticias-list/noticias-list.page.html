@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notícias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content fullscreen>
+    <ion-list>
+      <ion-list-header>
+        ùltimas Notícias
+      </ion-list-header>
+
+      <ion-item *ngFor="let noticia of noticias" (click)="detalheNoticia(noticia)">
+        <ion-avatar slot="start">
+          <img src="{{noticia.imagem}}">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{noticia.titulo}}</h2>
+          <p>{{noticia.conteudo | slice:0:40}}...</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+   
+
+
+  </ion-content>
