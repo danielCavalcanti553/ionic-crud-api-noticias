@@ -19,12 +19,17 @@ export class NoticiasDetalhePage implements OnInit {
     private navCtrl : NavController) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(){
+    this.noticia.imagem = null;
     this.actRoute.paramMap.subscribe(resp=>{
 
       let id = resp.get('id');
       this.noticiaServ.getNoticiaById(id).subscribe(data=>{
         this.noticia = data;
-        console.log(data);
+        this.noticia.imagem = this.noticiaServ.getImage(id);
+      
       });
     })
   }
@@ -35,6 +40,10 @@ export class NoticiasDetalhePage implements OnInit {
 
   excluir(noticiaObj){
     this.navCtrl.navigateForward(['noticias-delete',noticiaObj.id]);
+  }
+
+  upload(noticiaObj){
+    this.navCtrl.navigateForward(['noticias-upload',noticiaObj.id]);
   }
 
   

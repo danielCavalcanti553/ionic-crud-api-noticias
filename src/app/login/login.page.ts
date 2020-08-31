@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
  
   //login : Login;
   formGroup : FormGroup;
-  message : Message;
+  message : any;
   msg : string = null;
 
   constructor(private formBuilder : FormBuilder, 

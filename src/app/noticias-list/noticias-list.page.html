@@ -16,13 +16,21 @@
 
       <ion-item *ngFor="let noticia of noticias" (click)="detalheNoticia(noticia)">
         <ion-avatar slot="start">
-          <img src="{{noticia.imagem}}">
+          <img src="{{noticiaServ.getImage(noticia.id)}}">
         </ion-avatar>
         <ion-label>
           <h2>{{noticia.titulo}}</h2>
           <p>{{noticia.conteudo | slice:0:40}}...</p>
         </ion-label>
       </ion-item>
+    
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+      
     </ion-list>
    
 

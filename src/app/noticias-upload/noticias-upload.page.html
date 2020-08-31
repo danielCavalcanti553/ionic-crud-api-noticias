@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Notícias Upload</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+  <img src="{{location}}" width="200">
+
+  <ion-item>
+    <ion-label>Escolher foto</ion-label>
+    <ion-input type="file" (change)="onChange($event)"></ion-input>
+  </ion-item>
+
+ 
+</ion-card>
+</ion-content>

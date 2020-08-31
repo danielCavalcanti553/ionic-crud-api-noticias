@@ -36,6 +36,10 @@ const routes: Routes = [
   {
     path: 'noticias-delete/:id',
     loadChildren: () => import('./noticias-delete/noticias-delete.module').then( m => m.NoticiasDeletePageModule)
+  },
+  {
+    path: 'noticias-upload/:id',
+    loadChildren: () => import('./noticias-upload/noticias-upload.module').then( m => m.NoticiasUploadPageModule)
   }
 ];
 
